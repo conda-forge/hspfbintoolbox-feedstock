@@ -27,7 +27,6 @@ requirements:
     - python >=3.8
     - toolbox_utils >=5.0.0,<6.0.0
     - cltoolbox >1.1.0
-    - typing_extensions
     - pydantic
     - pandas
 
