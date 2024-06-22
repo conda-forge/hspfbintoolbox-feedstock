@@ -26,9 +26,11 @@ requirements:
   run:
     - cltoolbox >1.1.0
     - dateparser
-    - numpy >=1.20,<2.0<=py3.9
+    - numpy >=1.20
+    - numpy <2.0  # [py<=3.9]
     - pandas
-    - pint !=0.21.*,<0.22<py3.9
+    - pint !=0.21.*
+    - pint <0.22  # [py<3.9]
     - pint-pandas
     - python >=3.8
     - pydantic
