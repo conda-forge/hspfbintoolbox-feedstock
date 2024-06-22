@@ -28,7 +28,7 @@ requirements:
     - dateparser
     - numpy >=1.20,<2.0;python_version<='3.9'
     - pandas
-    - pint != 0.21.*,<0.22;python_version<'3.9'
+    - pint !=0.21.*,<0.22;python_version<'3.9'
     - pint-pandas
     - python >=3.8
     - pydantic
