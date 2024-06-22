@@ -18,17 +18,22 @@ build:
 
 requirements:
   host:
+    - pip
     - python >=3.8
     - setuptools >=45
     - setuptools-scm >=6.2
     - wheel
-    - pip
   run:
-    - python >=3.8
-    - toolbox_utils >=5.0.0,<6.0.0
     - cltoolbox >1.1.0
-    - pydantic
+    - dateparser
+    - numpy >= 1.20, < 2.0 ; python_version <= '3.9'
     - pandas
+    - pint != 0.21.*, < 0.22 ; python_version < '3.9'
+    - pint-pandas
+    - python >=3.8
+    - pydantic
+    - scipy
+    - tabulate
 
 test:
   imports:
