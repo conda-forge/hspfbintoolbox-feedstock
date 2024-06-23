@@ -12,13 +12,14 @@ source:
 build:
   entry_points:
     - hspfbintoolbox = hspfbintoolbox.hspfbintoolbox:main
+  noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python
+    - python >=3.9
     - setuptools >=45
     - setuptools-scm >=6.2
     - wheel
@@ -26,12 +27,11 @@ requirements:
     - cltoolbox >1.1.0
     - dateparser
     - numpy >=1.20
-    - numpy <2.0  # [py<=3.9]
+    - numpy <2.0
     - pandas
-    - pint !=0.21.*
-    - pint <0.22  # [py<3.9]
+    - pint
     - pint-pandas
-    - python
+    - python >=3.9
     - pydantic
     - scipy
     - tabulate
