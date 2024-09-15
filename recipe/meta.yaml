@@ -1,5 +1,5 @@
 {% set name = "hspfbintoolbox" %}
-{% set version = "9.0.5" %}
+{% set version = "9.0.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,14 +7,14 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hspfbintoolbox-{{ version }}.tar.gz
-  sha256: b14a85da3d6bd6e9ad9536ef686a74a271199fd67397e81a148219211a6aa217
+  sha256: 4c528c3df14833b277452737971fa197cf5a4f883d0494cc3d9729af375b6c68
 
 build:
   entry_points:
     - hspfbintoolbox = hspfbintoolbox.hspfbintoolbox:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
