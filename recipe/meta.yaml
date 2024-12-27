@@ -6,7 +6,7 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/hspfbintoolbox-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hspfbintoolbox-{{ version }}.tar.gz
   sha256: 4c528c3df14833b277452737971fa197cf5a4f883d0494cc3d9729af375b6c68
 
 build:
@@ -14,12 +14,12 @@ build:
     - hspfbintoolbox = hspfbintoolbox.hspfbintoolbox:main
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 0
+  number: 1
 
 requirements:
   host:
     - pip
-    - python >=3.9
+    - python {{ python_min }}
     - setuptools >=45
     - setuptools-scm >=6.2
     - wheel
@@ -31,7 +31,7 @@ requirements:
     - pandas
     - pint
     - pint-pandas
-    - python >=3.9
+    - python >={{ python_min }}
     - pydantic
     - scipy
     - tabulate
@@ -44,6 +44,7 @@ test:
     - hspfbintoolbox --help
   requires:
     - pip
+    - python {{ python_min }}
 
 about:
   summary: Reads Hydrological Simulation Program - FORTRAN binary output files.
