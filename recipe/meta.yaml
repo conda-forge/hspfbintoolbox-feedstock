@@ -1,5 +1,5 @@
 {% set name = "hspfbintoolbox" %}
-{% set version = "9.0.7" %}
+{% set version = "9.0.8" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/hspfbintoolbox-{{ version }}.tar.gz
-  sha256: a0be6fa80f822e258091e7a6847efc3d8ca4667a08c5167f8547e8f17f106f7e
+  sha256: 2f3751c9ee56f11db98c7d0c0e062d8b57e36ef21503486d2d99b476bcccaa44
 
 build:
   entry_points:
