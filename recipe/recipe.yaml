@@ -1,0 +1,67 @@
+schema_version: 1
+
+context:
+  name: hspfbintoolbox
+  version: "9.0.12"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/${{ name }}-${{ version }}.tar.gz
+  sha256: 0743d9ab4131b60f1172fa5bad52cb9616e50d73b1bc67e573cc28d30a849510
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv --no-deps
+  python:
+    entry_points:
+      - hspfbintoolbox = hspfbintoolbox.hspfbintoolbox:main
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}
+    - setuptools >=45
+    - setuptools-scm >=6.2
+    - wheel
+  run:
+    - cltoolbox >1.1.0
+    - dateparser
+    - numpy >=1.20
+    - numpy <2.0
+    - pandas
+    - pint
+    - pint-pandas
+    - python >=${{ python_min }}
+    - pydantic
+    - scipy
+    - tabulate
+
+tests:
+  - python:
+      imports:
+        - hspfbintoolbox
+      pip_check: true
+      python_version:
+        - ${{ python_min }}
+        - "*"
+  - requirements:
+      run:
+        - pip
+        - python ${{ python_min }}
+    script:
+      - hspfbintoolbox --help
+
+about:
+  summary: Reads Hydrological Simulation Program - FORTRAN binary output files.
+  license: BSD-3-Clause
+  license_file: LICENSE.txt
+  homepage: https://pypi.org/project/hspfbintoolbox/
+
+extra:
+  recipe-maintainers:
+    - timcera
+
